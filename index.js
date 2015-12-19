@@ -34,7 +34,7 @@ class HarmonyHub {
   triggerDevice() {
     harmony(ip).then(harmonyClient => {
       harmonyClient.isOff().then(off => {
-        if(off || this.opt === 'help') {
+        if(off || this.opt === 'help' || this.opt !== 'off') {
           harmonyClient.getActivities().then(activities => {
             let possibleActivities = activities.map(activity => activity.label.toLowerCase());
             
